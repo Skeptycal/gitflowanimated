@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled from "styled-components";
-import GitFlow from "./gitflow";
+import AppBar from "./app-bar";
+import AppContent from "./app-content";
 import shortid from "shortid";
 
 const DEVELOP = 'develop';
@@ -44,9 +45,15 @@ const seedData = () => {
     }
 };
 
-const AppElm = styled.main`
-  text-align: center;
-  padding: 10px;
+const AppElm = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 1fr;
+    font: 1em 'Source Sans Pro', sans-serif;
+    color: #B0BEC5;
+    background-color: #263238;
+    min-height: 100vh;
+    min-width: 100vw;
 `;
 
 class App extends Component {
@@ -251,19 +258,13 @@ class App extends Component {
     render() {
         return (
             <AppElm>
-                <GitFlow
-                    project={this.state.project}
-                    onMerge={this.handleMerge}
-                    onRelease={this.handleRelease}
-                    onCommit={this.handleCommit}
-                    onNewFeature={this.handleNewFeature}
-                    onNewRelease={this.handleNewRelease}
-                    onDeleteBranch={this.handleDeleteBranch}
-                    onNewHotFix={this.handleNewHotFix}
-                />
+                <AppBar/>
+                <AppContent/>
             </AppElm>
-        );
+        )
     }
+
+
 }
 
 export default App;

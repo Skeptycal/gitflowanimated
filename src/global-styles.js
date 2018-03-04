@@ -51,28 +51,18 @@ injectGlobal`
       *, *:before, *:after {
         box-sizing: inherit;
       }
+`;
 
+export const spacing = '10px';
 
-    body {
-        background-color: #fff;
-        color: #3d3d3d;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1em;
-
+export const colors = {
+    material: {
+        background: '#263238',
+        foreground: '#B0BEC5',
+        primary: '#607D8B',
+        secondary: '#546E7A'
     }
-`;
-
-export const FlowName = styled.h2`
-    font-weight: bold;
-    font-size: 1.2rem;
-`;
-
-export const FlowActions = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 10px;
-  margin-top: 10px;
-`;
+};
 
 export const Button = styled.button`
   border: none;
@@ -118,4 +108,7 @@ export const fadeIn = keyframes`
     to {
       opacity: 1;
     }
+`;
+
+export const FlowElm = styled.div`
 `;
